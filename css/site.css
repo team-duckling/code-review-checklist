@@ -66,6 +66,15 @@ ul {
     text-align:left;
 }
 
+li.flex {
+    display: flex;
+    gap: 6px;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 6px;
+}
+
 .checklist {
     width: 33%;
     margin-top: 20px;
