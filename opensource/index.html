@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from www.codereviewchecklist.com/opensource/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 15 Aug 2023 05:05:21 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-44561618-37"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-44561618-37');
+    </script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Code Review Checklist is Open Source</title>
+    <meta name="description" content="Code Review Checklist is Open Source and encourages contributions" />
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Code Review Checklist is Open Source">
+    <meta name="twitter:description" content="Code Review Checklist is Open Source and encourages contributions">
+    <meta name="twitter:image" content="https://www.codereviewchecklist.com/images/code-review-checklist.png">
+    <meta property="og:url" content="https://www.codereviewchecklist.com/opensource/" />
+    <meta property="og:description" content="Code Review Checklist is Open Source and encourages contributions" />
+    <meta property="og:title" content="Code Review Checklist is Open Source" />
+    <meta property="og:image" content="https://www.codereviewchecklist.com/images/code-review-checklist.png" />
+    <meta property="og:type" content="webpage" />
+    <link rel="canonical" href="index.html" />
+    <link rel="stylesheet" href="../lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="icon" href="../favicon.ico" />
+    <link rel="stylesheet" href="../css/site.css" />
+    <link href="https://www.google-analytics.com/" rel="preconnect" crossorigin>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" href="../index.html">CodeReviewChecklist.com</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../about/index.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Open Source</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="theme-switch-wrapper">
+                    <div class="navPadding">Dark Theme</div>
+                    <label class="theme-switch" for="checkbox">
+                        <input type="checkbox" id="checkbox" />
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            <h1 class="display-4">Open Source Contributions</h1>
+
+<p>This website is open source on <a href="https://github.com/leeenglestone/CodeReviewChecklist/">GitHub</a>, so you can help make it better!</p>
+
+<p>There are existing issues ranging from layout, content and design. You can also make your own suggestions.</p>
+
+<hr />
+
+<div id="github-issues"></div>
+
+<script src="../lib/jquery/dist/jquery.min.js"></script>
+<script>
+    var urlToGetAllOpenBugs = "https://api.github.com/repos/leeenglestone/codereviewchecklist/issues?state=open";
+
+    $(document).ready(function () {
+        $.getJSON(urlToGetAllOpenBugs, function (allIssues) {
+            $("div#github-issues").append("There are " + allIssues.length + " outstanding issues:</br>");
+            $.each(allIssues, function (i, issue) {
+
+                // Get assignee (if applicable)
+                var assigneeName = "Unassigned";
+                if (issue.assignee) {
+                    assigneeName = issue.assignee.login;
+                }
+
+                // Calculate number of days ago created
+                var today = new Date();
+                var timeDifference = today - Date.parse(issue.created_at);
+                var daysAgo = (timeDifference / (1000 * 3600 * 24)).toFixed();
+
+                $("div#github-issues")
+                    .append("<div style=\"margin-bottom:20px;\">")
+                    .append("<strong><a href=\"" + issue.html_url + "\">" + issue.title + "</a></strong></br>")
+                    .append("#" + issue.number + " opened " + daysAgo + " days ago by " + issue.user.login + "</br>")
+                    .append("Assigned to: " + assigneeName)
+                    .append("</div>");
+            });
+        });
+    });
+</script>
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container text-center">
+            &copy; 2023 - CodeReviewChecklist.com | <a href="https://github.com/leeenglestone/CodeReviewChecklist" target="_blank">GitHub Repository</a>
+        </div>
+    </footer>
+    <script src="../lib/jquery/dist/jquery.min.js"></script>
+    <script src="../lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/site95be.js?v=4q1jwFhaPaZgr8WAUSrux6hAuh0XDg9kPS3xIVq36I0"></script>
+    <script src="../js/darkThemed83f.js?v=jS3cY0i9-1OaRVjv2-gJZhQlruAgwR1dZIixu9iO-BU"></script>
+    
+</body>
+
+<!-- Mirrored from www.codereviewchecklist.com/opensource/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 15 Aug 2023 05:05:21 GMT -->
+</html>

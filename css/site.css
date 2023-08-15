@@ -1,0 +1,263 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px; /* Vertically center the text there */
+}
+
+ul {
+    list-style-type: none !important;
+    padding-inline-start: 0px;
+    text-align:left;
+}
+
+.checklist {
+    width: 33%;
+    margin-top: 20px;
+}
+
+    .checklist label {
+        margin-bottom: unset;
+        margin-left: 4px;
+    }
+
+    .checklist input:checked + label {
+        text-decoration: line-through;
+    }
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+h2 {
+    font-size: 1.3em;
+    text-align: left;
+}
+
+#intro {
+    margin-bottom: 30px;
+}
+
+
+img.circle-image-headshot {
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .checklist {
+        width:100%;
+        margin-top: 20px;
+    }
+
+    h1.display-4 
+    {
+        font-size:2rem;
+    }
+
+    .navPadding {
+        padding-right: 12px;
+        width: 50px;
+        line-height: 125%;
+    }
+
+    .navbar-brand
+    {
+        font-size:1.1em;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .checklist {
+        width: 50%;
+        margin-top: 20px;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .checklist {
+        width: 33%;
+        margin-top: 20px;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .checklist {
+        width: 33%;
+        margin-top: 20px;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .checklist {
+        width: 33%;
+        margin-top: 20px;
+    }
+}
+
+/*Toggle switch styling*/
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 10px;
+    right: 70px;
+  }
+
+  .theme-switch {
+    display: inline-block;
+    height: 34px;
+    position: relative;
+    width: 60px;
+  }
+  
+  .theme-switch input {
+    display:none;
+  }
+  
+  .slider {
+    background-color: #ccc;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    background-color: #fff;
+    bottom: 4px;
+    content: "";
+    height: 26px;
+    left: 4px;
+    position: absolute;
+    transition: .4s;
+    width: 26px;
+  }
+  
+  input:checked + .slider {
+    background-color: #66bb6a;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(26px);
+  }
+  
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+  
+/* Adding theme support */
+ :root {
+    --primary-color: #424242;
+    --secondary-color: #536390;
+    --font-color: #424242;
+    --bg-color: #fff;
+    --heading-color: #292922;
+    --nav-toggle-icon: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(0, 0, 0, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+[data-theme="dark"] {
+    --primary-color: #9A97F3;
+    --secondary-color: #818cab;
+    --font-color: #e1e1ff;
+    --bg-color: #161625;
+    --heading-color: #818cab;
+    --nav-toggle-icon: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+  
+body{
+    color: var(--font-color);
+    background-color: var(--bg-color);
+}
+
+.navbar{
+    color: var(--font-color) !important;
+    background-color: var(--bg-color) !important;
+}
+
+a.navbar-brand{
+    color: var(--font-color) !important;
+    background-color: var(--bg-color) !important;
+}
+
+.nav-link{
+    color: var(--font-color) !important;
+    background-color: var(--bg-color) !important;
+}
+
+.navbar-toggler-icon {
+    background-image: var(--nav-toggle-icon);
+}
+
+.navPadding {
+    padding-right: 8px;
+}
